@@ -87,33 +87,54 @@ Design and implement a modern data warehouse using SQL Server that integrates an
 
 ---
 ## 📁 Repository Structure
-```plaintext
-Enterprise-Sales-Data-WareHouse/
+
+```text
+data-warehouse-project/
+
 │
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+├── datasets/                          # Raw datasets used for the project (ERP and CRM data)
 │
-├── docs/                               # Project documentation and architecture diagrams
-│   ├── Data_Architecture.drawio        # Medallion architecture (Bronze, Silver, Gold)
+├── docs/                              # Project documentation and architecture diagrams
+│   ├── Data_Architecture.drawio       # Medallion architecture (Bronze, Silver, Gold)
 │   ├── Data_Architecture.drawio.png
-│   ├── Data Flow Diagram.drawio        # Full ETL/data movement pipeline
+│   ├── Data Flow Diagram.drawio       # Full ETL/data movement pipeline
 │   ├── Data Flow Diagram.drawio.png
-│   ├── Integration Model.drawio        # How ERP & CRM data are merged and structured
+│   ├── Integration Model.drawio       # How ERP & CRM data are merged and structured
 │   ├── Integration Model.drawio.png
-│   ├── Star Schema (Data Mart).drawio  # Final analytical data model for reporting
-│   ├── Data Catalog.md                 # Describes tables, fields, types, and business meaning
-│   ├── Naming Convention.md            # Consistent naming standards across tables and files
+│   ├── Star Schema (Data Mart).drawio # Final analytical data model for reporting
+│   ├── Data Catalog.md                # Describes tables, fields, types, and business meanings
+│   └── Naming Convention.md           # Consistent naming standards across tables and files
 │
-├── scripts/                            # SQL scripts for ETL and data modeling
-│   ├── bronze/                         # Load raw ERP & CRM data into staging tables
-│   ├── silver/                         # Clean, normalize, and join datasets for unified structure
-│   ├── gold/                           # Build final fact and dimension tables (star schema)
+├── scripts/                           # SQL scripts for ETL and data modeling
+│   ├── bronze/                        # Load raw ERP & CRM data into staging tables
+│   ├── silver/                        # Clean, normalize, and join datasets for unified structure
+│   └── gold/                          # Build final fact and dimension tables (star schema)
 │
-├── tests/                              # Data quality checks (nulls, duplicates, referential integrity)
+├── tests/                             # Data quality checks (nulls, duplicates, referential integrity)
 │
-├── README.md                           # Project overview, architecture, and instructions
-└── LICENSE                             # License information (MIT)
+├── Analytics-script/                  # SQL scripts for business analysis and insights
+│   │
+│   ├── 1. EDA-analysis/
+│   │   ├── 0_Dimensions & Measures    # Quick scan of key fields like sales amount
+│   │   ├── 1_Dimensions Exploration   # Explore countries, product hierarchy, etc.
+│   │   ├── 2_Database Exploration     # Explore schema metadata (tables, columns)
+│   │   ├── 3_Date Exploration         # Sales timeline and customer age range
+│   │   ├── 4_Measures Exploration     # Total sales, quantity, orders, price, customers
+│   │   ├── 5_Magnitude Analysis       # Breakdown by category, country, gender, etc.
+│   │   └── 6_Ranking Analysis         # Top/bottom products and customers by revenue
+│   │
+│   └── 2. Advanced-analysis/
+│       ├── 1_Change_over_time_analysis # Track sales, customers, and quantity over time
+│       ├── 2_Cumulative_Analysis       # Running totals and moving averages
+│       ├── 3_Performance_Analysis      # YoY performance and comparison to product average
+│       ├── 4_Part_to_Whole_Analysis    # % contribution of each category to total sales
+│       ├── 5_Data_Segmentation         # Segments customers (VIP/Regular/New)
+│       ├── 6_Customer_Report           # Final view with detailed customer-level KPIs
+│       └── 7_Product_Report            # Final view with detailed product-level KPIs
+│
+├── README.md                          # Project overview, architecture, and instructions
+└── LICENSE                            # License information (MIT)
 ```
----
 
 ## ⚙️ Tech Stack
 
